@@ -1,0 +1,12 @@
+def count_minimum_flips(coins):
+# Считаем количество монет в положении "решка" и "герб"
+    heads_count=coins.count('H')
+    tails_count=coins.couny("T")
+# Находим положение, которое встречается реже
+    if heads_count<tails_count:
+        less_frequent_position='H'
+    else:
+        less_frequent_position='T'
+# Вычисляем минимальное количество переворотов
+min_flips=abs(heads_count-tails_count)//2
+print(min_flips)
