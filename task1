@@ -1,12 +1,14 @@
-def count_minimum_flips(coins):
-# Считаем количество монет в положении "решка" и "герб"
-    heads_count=coins.count('H')
-    tails_count=coins.couny("T")
-# Находим положение, которое встречается реже
-    if heads_count<tails_count:
-        less_frequent_position='H'
+n = int(input('Введите количество монет '))
+orel = reshka = 0
+for i in range(n):
+    a = int(input('Орел(1) или решка(0)? '))
+    if a == 1:
+        orel += 1
     else:
-        less_frequent_position='T'
-# Вычисляем минимальное количество переворотов
-min_flips=abs(heads_count-tails_count)//2
-print(min_flips)
+        reshka += 1
+if orel < reshka:
+    print(f'Переверните {orel} монет с орла на решку, их меньше всего')
+elif orel == reshka:
+    print(f'Количество орлов и решек одинаково, по {orel} штук')
+else:
+    print((f'Переверните {reshka} монет с решки на орла, их меньше всего'))
