@@ -1,0 +1,16 @@
+S=int(input("Введите сумму S:"))
+P=int(input("Введите произведение P:"))
+X,Y=0,0
+discriminant=S**2-4*P
+if discriminant >= 0:
+    Y1=(S+discriminant**0.5)/2
+    Y2=(S-discriminant**0.5)/2
+    if Y1.is_integer():
+        Y=int(Y1)
+    elif Y2.is_integer():
+        Y=int(Y2)
+        X=S-Y
+    if 0<X<=1000 and 0<Y<=1000:
+        print(f"Петя задумал числа X={X} и Y={Y}")
+    else:
+        print("Невозможно найти подходящие натуральные числа X и Y")
